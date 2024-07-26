@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitor Registration Form</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: "Rubik", sans-serif;
+            background-color: #e0e0e0;
+            background-size: cover;
+        }
+        .container {
+            width: 90%;
+            max-width: 700px; /* Adjust the max-width for larger screens */
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], input[type="tel"], input[type="date"] {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        input[type="text"]:hover, input[type="email"]:hover, input[type="tel"]:hover, input[type="date"]:hover {
+            border-color: #007BFF;
+            box-shadow: 0 0 8px rgba(0,123,255,0.5);
+        }
+        button {
+            padding: 15px 20px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            font-family: "Rubik", sans-serif;
+            font-size: larger;
+            
+        }
+        button:hover {
+            background: #f3d52b;
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 600;
+            text-align: center;
+            font-size: 2.5em;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 200px; /* Adjust the max-width for a larger logo */
+            height: auto;
+            margin-top: 2%;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+        }
+        .checkbox-group input[type="checkbox"] {
+            display: none;
+        }
+        .checkbox-group input[type="checkbox"] + label::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+            border: 2px solid #007BFF;
+            border-radius: 5px;
+            background: white;
+            transition: background 0.3s, border-color 0.3s;
+        }
+        .checkbox-group input[type="checkbox"]:checked + label::before {
+            background: #007BFF;
+            border-color: #0056b3;
+        }
+        .checkbox-group label:hover::before {
+            border-color: #0056b3;
+        }
+        .checkbox-group input[type="checkbox"]:hover + label {
+            background: #007BFF;
+            color: white;
+        }
+        #success-message {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                margin: 20px auto;
+            }
+            .logo {
+                max-width: 150px; /* Smaller logo on smaller screens */
+            }
+            h2 {
+                font-size: 2em;
+            }
+            button {
+                font-size: 14px;
+                padding: 12px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+            .logo {
+                max-width: 120px; /* Even smaller logo on very small screens */
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            button {
+                font-size: 12px;
+                padding: 10px 12px;
+            }
+        }
+    </style>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            document.getElementById('success-message').style.display = 'block';
+        }
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        // Redirect to the feedback form page
+        window.location.href = 'feedback.html';
+    }
+
+
+    </script>
+</head>
+<body>
+    <!-- Logo -->
+    <img src="img/logo.jpg" alt="Logo" class="logo">
+
+    <div class="container">
+        <h2>Visitor Registration Form</h2>
+        <form onsubmit="handleSubmit(event)">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="date">Date of Visit:</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <h2>Which services are you interested in?</h2>
+            <div class="form-group checkbox-group">
+                <div>
+                    <input type="checkbox" id="virtual_tours" name="services" value="Virtual Tours">
+                    <label for="virtual_tours">Virtual Tours</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="virtual_reality" name="services" value="Virtual Reality">
+                    <label for="virtual_reality">Virtual Reality</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="visitor_management" name="services" value="Visitor Management">
+                    <label for="visitor_management">Visitor Management</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="digital_touch_screens" name="services" value="Digital Touch Screens">
+                    <label for="digital_touch_screens">Digital Touch Screens</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="gaming" name="services" value="Gaming">
+                    <label for="gaming">Gaming</label>
+                </div>
+            </div>
+            <button type="submit">Submit</button>
+            <div id="success-message">Registration Successful!</div>
+        </form>
+    </div>
+</body>
+</html>

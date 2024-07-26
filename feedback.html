@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: "Rubik", sans-serif;
+            background-color: #e0e0e0;
+            background-size: cover;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px; /* Adjust max-width for larger screens */
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        textarea, input[type="radio"] {
+            margin-right: 10px;
+        }
+        textarea {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        textarea:hover {
+            border-color: #007BFF;
+            box-shadow: 0 0 8px rgba(0,123,255,0.5);
+        }
+        .rating-group {
+            margin-bottom: 15px;
+        }
+        .rating-group label {
+            margin-right: 20px;
+        }
+        .table-container {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #e7f0ff; /* Light blue background */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        input[type="checkbox"] {
+            margin: 0;
+            cursor: pointer;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        th:hover, td:hover {
+            background-color: #d0e7ff;
+        }
+        button {
+            padding: 15px 20px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            font-family: "Rubik", sans-serif;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background: #f3d52b;
+        }
+        h2 {
+            margin-bottom: 20px;
+            font-family: "Bebas Neue", sans-serif;
+            font-weight: 600;
+            text-align: center;
+            font-size: 2.5em;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto 20px;
+            max-width: 200px; /* Adjust the max-width for a larger logo */
+            height: auto;
+            margin-top: 2%;
+        }
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                margin: 20px auto;
+            }
+            .logo {
+                max-width: 150px; /* Smaller logo on smaller screens */
+            }
+            h2 {
+                font-size: 2em;
+            }
+            button {
+                font-size: 14px;
+                padding: 12px 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+            .logo {
+                max-width: 120px; /* Even smaller logo on very small screens */
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            button {
+                font-size: 12px;
+                padding: 10px 12px;
+            }
+            table {
+                font-size: 12px;
+            }
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo -->
+    <img src="img/logo.jpg" alt="Logo" class="logo">
+
+    <div class="container">
+        <h2>Feedback Form</h2>
+        <form>
+            <div class="form-group">
+                <label for="communication">How well has Axis Tech communicated compelling discussions in the event?</label>
+                <textarea id="communication" name="communication" rows="4" placeholder="Enter your feedback here..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Please rate your level of satisfaction with Axis Tech in regards to the following:</label>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Service Quality</th>
+                            <th>Cleanliness</th>
+                            <th>Responsiveness</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Very Satisfied</th>
+                            <td><input type="checkbox" id="sq_very_satisfied"></td>
+                            <td><input type="checkbox" id="cl_very_satisfied"></td>
+                            <td><input type="checkbox" id="re_very_satisfied"></td>
+                        </tr>
+                        <tr>
+                            <th>Satisfied</th>
+                            <td><input type="checkbox" id="sq_satisfied"></td>
+                            <td><input type="checkbox" id="cl_satisfied"></td>
+                            <td><input type="checkbox" id="re_satisfied"></td>
+                        </tr>
+                        <tr>
+                            <th>Neutral</th>
+                            <td><input type="checkbox" id="sq_neutral"></td>
+                            <td><input type="checkbox" id="cl_neutral"></td>
+                            <td><input type="checkbox" id="re_neutral"></td>
+                        </tr>
+                        <tr>
+                            <th>Dissatisfied</th>
+                            <td><input type="checkbox" id="sq_dissatisfied"></td>
+                            <td><input type="checkbox" id="cl_dissatisfied"></td>
+                            <td><input type="checkbox" id="re_dissatisfied"></td>
+                        </tr>
+                        <tr>
+                            <th>Very Dissatisfied</th>
+                            <td><input type="checkbox" id="sq_very_dissatisfied"></td>
+                            <td><input type="checkbox" id="cl_very_dissatisfied"></td>
+                            <td><input type="checkbox" id="re_very_dissatisfied"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="form-group">
+                <label for="aspects">How do you rate Axis Tech with respect to the following aspects?</label>
+                <textarea id="aspects" name="aspects" rows="4" placeholder="Enter your comments here..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Please rate Axis Tech in regards to the following aspects:</label>
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Service Quality</th>
+                            <th>Cleanliness</th>
+                            <th>Responsiveness</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Excellent</th>
+                            <td><input type="checkbox" id="sq_excellent"></td>
+                            <td><input type="checkbox" id="cl_excellent"></td>
+                            <td><input type="checkbox" id="re_excellent"></td>
+                        </tr>
+                        <tr>
+                            <th>Good</th>
+                            <td><input type="checkbox" id="sq_good"></td>
+                            <td><input type="checkbox" id="cl_good"></td>
+                            <td><input type="checkbox" id="re_good"></td>
+                        </tr>
+                        <tr>
+                            <th>Average</th>
+                            <td><input type="checkbox" id="sq_average"></td>
+                            <td><input type="checkbox" id="cl_average"></td>
+                            <td><input type="checkbox" id="re_average"></td>
+                        </tr>
+                        <tr>
+                            <th>Poor</th>
+                            <td><input type="checkbox" id="sq_poor"></td>
+                            <td><input type="checkbox" id="cl_poor"></td>
+                            <td><input type="checkbox" id="re_poor"></td>
+                        </tr>
+                        <tr>
+                            <th>Very Poor</th>
+                            <td><input type="checkbox" id="sq_very_poor"></td>
+                            <td><input type="checkbox" id="cl_very_poor"></td>
+                            <td><input type="checkbox" id="re_very_poor"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
